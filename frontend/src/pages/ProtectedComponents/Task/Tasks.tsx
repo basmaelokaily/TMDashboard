@@ -1,5 +1,5 @@
-import React from "react";
+import { ViewTasks } from "../../../components/Tasks/ViewTasks";
 
 export const Tasks = () => {
-  return <div>Tasks</div>;
+  return <ViewTasks />;
 };

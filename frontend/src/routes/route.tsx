@@ -1,23 +1,35 @@
 // src/routes/index.ts (Route configuration ONLY)
 import { createBrowserRouter } from "react-router-dom";
 import { Login } from "../pages/login/Login";
-import { Register } from "../pages/register/Register";
+import { RegisterAndClearStorage } from "../pages/register/Register";
 import ProtectedRoute from "../Auth/ProtectedRoute";
-import { Layout } from "../Shared/layout/Layout";
+import { Layout } from "../Shared/layout/Protected/Layout";
 import { DashBoard } from "../pages/ProtectedComponents/Dashboard/DashBoard";
 import { Tasks } from "../pages/ProtectedComponents/Task/Tasks";
 import { AddTask } from "../pages/ProtectedComponents/Task/AddTask";
 import { Analytics } from "../pages/ProtectedComponents/Analytics/Analytics";
 import { ViewTask } from "../pages/ProtectedComponents/Task/ViewTask";
+import { NotFound } from "../pages/NotFound/NotFound";
+import Logout from "../pages/logout/Logout";
+import { AuthLayout } from "../Shared/layout/Auth/AuthLayout";
 
 export const router = createBrowserRouter([
   {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
+    element: <AuthLayout />,
+    children: [
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <RegisterAndClearStorage />,
+      },
+      {
+        path: "/logout",
+        element: <Logout />,
+      },
+    ],
   },
   {
     path: "/",
@@ -52,5 +64,9 @@ export const router = createBrowserRouter([
         element: <Analytics />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);

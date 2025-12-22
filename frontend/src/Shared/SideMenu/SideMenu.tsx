@@ -1,24 +1,40 @@
-import React, { Suspense, useState } from "react";
+import { Suspense, useState } from "react";
 import { navigationItems } from "../NavigationItems/NavItems";
+import { Loader } from "lucide-react";
+import { useNavigate } from "react-router";
 
 export const SideMenu = () => {
   const [currentSection, setCurrentSection] = useState("dashboard");
-  const handleNavigation = (href: string) => {};
+  const navigate = useNavigate();
+  const handleNavigation = (href: string) => {
+    setCurrentSection(href);
+    navigate(href);
+  };
   return (
-    <div className="w-[268px]">
-      <aside className="w-60 min-h-screen bg-white shadow-md border-r border-gray-200 rounded-xl">
+    <div className="h-full">
+      <aside className="w-60 bg-gray-900 shadow-xl border-r border-gray-800 rounded-xl h-full py-6">
+        <div className="px-6 pb-4 mb-6 border-b border-gray-600">
+          <h1 className="text-2xl font-bold text-white text-center tracking-tight">
+            Task Manager
+          </h1>
+          <p className="text-xs text-gray-400 text-center mt-2">
+            Manage your workflow
+          </p>
+        </div>
         <ul className="flex flex-col gap-3">
           {navigationItems.map((item) => {
             const isActive = currentSection === item.href;
-
             return (
-              <li key={item.id}>
+              <li key={item.id} className="px-2">
                 <button
                   onClick={() => handleNavigation(item.href)}
-                  className={`w-fullblock px-7 py-3 text-sm font-bold cursor-pointer text-shift-dark-blue hover:bg-[#7152F30D] ${
-                    isActive ? "bg-[#7152F30D] font-bold" : "text-gray-700"
+                  className={`w-full flex flex-row gap-3 text-start rounded-lg px-8 py-3 text-sm font-medium cursor-pointer transition-all duration-200 ${
+                    isActive
+                      ? "bg-primary text-white shadow-lg"
+                      : "text-gray-300 hover:bg-gray-800 hover:text-white"
                   }`}
                 >
+                  {item.icon}
                   {item.label}
                 </button>
               </li>
@@ -32,7 +48,7 @@ export const SideMenu = () => {
 
 export const TMSidebar = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loader className="animate-spin w-1/3 text-primary" />}>
       <SideMenu />
     </Suspense>
   );

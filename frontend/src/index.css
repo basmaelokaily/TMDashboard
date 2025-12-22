@@ -1,97 +1,51 @@
-@import "tailwindcss/preflight";
-@tailwind utilities;
+/* src/index.css */
+@import "tailwindcss";
+/* That's it! Don't add /components or /utilities */
 
-@theme {
+@theme inline {
+  /* Your theme colors */
   --color-primary: rgb(var(--color-primary));
   --color-primary-foreground: rgb(var(--color-primary-foreground));
-
   --color-background: rgb(var(--color-background));
   --color-surface: rgb(var(--color-surface));
-  --color-surface-hover: rgb(var(--color-surface-hover));
-
   --color-text-primary: rgb(var(--color-text-primary));
   --color-text-secondary: rgb(var(--color-text-secondary));
-
-  --color-border: rgb(var(--color-border));
-
-  --color-status-completed: rgb(var(--color-status-completed));
-  --color-status-pending: rgb(var(--color-status-pending));
-  --color-status-inprogress: rgb(var(--color-status-inprogress));
-  --color-status-danger: rgb(var(--color-status-danger));
 }
 
 :root {
-  /* Primary brand color — Strong red for main actions (#DC2626) */
   --color-primary: 220 38 38;
-
-  /* Text color on primary buttons — Pure white (#FFFFFF) */
   --color-primary-foreground: 255 255 255;
-
-  /* App background — Very light gray / slate (#F8FAFC) */
   --color-background: 248 250 252;
-
-  /* Card & surface background — White (#FFFFFF) */
   --color-surface: 255 255 255;
-
-  /* Hover state for cards & rows — Soft gray (#F1F5F9) */
-  --color-surface-hover: 241 245 249;
-
-  /* Primary text — Almost black for readability (#0F172A) */
   --color-text-primary: 15 23 42;
-
-  /* Secondary text — Muted gray for labels & hints (#64748B) */
   --color-text-secondary: 100 116 139;
-
-  /* Borders & dividers — Light neutral gray (#E2E8F0) */
-  --color-border: 226 232 240;
-
-  /* Status: Completed — Professional green (#16A34A) */
-  --color-status-completed: 22 163 74;
-
-  /* Status: Pending — Warning amber (#EAB308) */
-  --color-status-pending: 234 179 8;
-
-  /* Status: In Progress — Informational blue (#3B82F6) */
-  --color-status-inprogress: 59 130 246;
-
-  /* Status: Danger / Delete / Error — Brand red (#DC2626) */
-  --color-status-danger: 220 38 38;
 }
 
 .dark {
-  /* Primary brand color — Softer red for dark UI (#EF4444) */
   --color-primary: 239 68 68;
-
-  /* Text on primary buttons — White (#FFFFFF) */
   --color-primary-foreground: 255 255 255;
-
-  /* App background — Near-black zinc (#09090B) */
   --color-background: 9 9 11;
-
-  /* Card & surface background — Dark gray (#18181B) */
   --color-surface: 24 24 27;
-
-  /* Hover state for cards & rows — Slightly lighter gray (#27272A) */
-  --color-surface-hover: 39 39 42;
-
-  /* Primary text — Off-white for eye comfort (#F4F4F5) */
   --color-text-primary: 244 244 245;
-
-  /* Secondary text — Muted gray (#A1A1AA) */
   --color-text-secondary: 161 161 170;
+}
 
-  /* Borders & dividers — Dark neutral gray (#27272A) */
-  --color-border: 39 39 42;
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
 
-  /* Status: Completed — Vibrant green (#22C55E) */
-  --color-status-completed: 34 197 94;
-
-  /* Status: Pending — Warm yellow (#FACC15) */
-  --color-status-pending: 250 204 21;
-
-  /* Status: In Progress — Calm blue (#60A5FA) */
-  --color-status-inprogress: 96 165 250;
-
-  /* Status: Danger / Error — Red accent (#EF4444) */
-  --color-status-danger: 239 68 68;
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  colbg-background: #f8fafc #09090b;
+  bg-primary: #dc2626 #ef4444;
+  bg-surface: #ffffff #18181b;
+  text-text-primary: #0f172a #f4f4f5;
+  text-text-secondary: #64748b #a1a1aa;
+  text-primary-foreground: #ffffff #ffffff;
+  border-border: #e2e8f0 #27272a;
 }
