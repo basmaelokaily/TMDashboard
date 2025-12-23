@@ -42,15 +42,13 @@ export const EditTaskPage = () => {
           <div className="flex items-center space-x-4">
             <Link
               to="/tasks"
-              className="flex items-center text-text-secondary hover:text-text-primary transition-colors"
+              className="flex items-center text-secondary hover:text-primary transition-colors"
             >
               <ArrowLeft className="w-5 h-5 mr-2" />
             </Link>
             <div>
-              <h1 className="text-2xl font-bold text-text-primary">
-                Edit New Task
-              </h1>
-              <p className="text-text-secondary mt-1">
+              <h1 className="text-2xl font-bold ">Edit New Task</h1>
+              <p className="text-secondary mt-1">
                 Edit an old task to your list
               </p>
             </div>

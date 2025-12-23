@@ -33,7 +33,7 @@ export const DeleteModal: React.FC<DeleteModalProps> = ({
           onClick={onClose}
           className="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-hover flex items-center justify-center transition-colors hover:bg-primary/10"
         >
-          <X className="w-4 h-4 text-text-primary" />
+          <X className="w-4 h-4 text-primary" />
         </button>
 
         {/* Trash Icon */}
@@ -44,16 +44,11 @@ export const DeleteModal: React.FC<DeleteModalProps> = ({
         </div>
 
         <div className="text-center mb-8">
-          <h2 className="text-xl font-semibold text-text-primary mb-3">
-            {title}
-          </h2>
-          <p className="text-text-secondary">
+          <h2 className="text-xl font-semibold text-primary mb-3">{title}</h2>
+          <p className="text-secondary">
             {description}
             {itemName && (
-              <span className="font-medium text-text-primary">
-                {" "}
-                "{itemName}"
-              </span>
+              <span className="font-medium text-primary"> "{itemName}"</span>
             )}
           </p>
         </div>
@@ -61,7 +56,7 @@ export const DeleteModal: React.FC<DeleteModalProps> = ({
         <div className="flex gap-3">
           <button
             onClick={onClose}
-            className="flex-1 px-4 py-2.5 border border-border text-text-primary rounded-lg hover:bg-surface-hover transition-colors font-medium"
+            className="flex-1 px-4 py-2.5 border border-border text-primary rounded-lg hover:bg-surface-hover transition-colors font-medium"
           >
             Cancel
           </button>

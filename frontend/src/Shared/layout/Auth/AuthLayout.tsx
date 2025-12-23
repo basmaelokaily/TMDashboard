@@ -43,7 +43,7 @@ export function AuthLayout() {
         <div className="absolute inset-0 bg-black/40 md:bg-primary/40" />
 
         <div className="relative z-10 h-full flex items-center justify-center p-4 md:p-8">
-          <div className="w-full bg-black/5 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 border border-white/20 bg-gradient-to-r from-black/8 via-gray-600 to-red-500/4">
+          <div className="w-full bg-black/5 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 border border-white/20 bg-gradient-to-r from-black via-gray-800 to-red-500/4">
             <Outlet />
           </div>
         </div>

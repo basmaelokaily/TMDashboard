@@ -13,6 +13,12 @@ interface loginCredentials {
   username: string;
   password: string;
 }
+interface RegisterCredentials {
+  username: string;
+  email: string;
+  password: string;
+}
+
 export const AuthenticationReducer = createApi({
   reducerPath: "AuthenticationReducer",
   baseQuery: fetchBaseQuery({
@@ -26,7 +32,7 @@ export const AuthenticationReducer = createApi({
         body: credentials,
       }),
     }),
-    register: builder.mutation<tokenResponse, loginCredentials>({
+    register: builder.mutation<tokenResponse, RegisterCredentials>({
       query: (credentials) => ({
         url: "/user/register/",
         method: "POST",
@@ -36,4 +42,4 @@ export const AuthenticationReducer = createApi({
   }),
 });
 
-export const { useLoginMutation } = AuthenticationReducer;
+export const { useLoginMutation, useRegisterMutation } = AuthenticationReducer;

@@ -76,13 +76,13 @@ export const Pagination = ({
           disabled={pageNumber === 1}
           className={`px-4 py-2 text-sm font-medium rounded-lg ${
             pageNumber === 1
-              ? "bg-surface-hover text-text-secondary cursor-not-allowed"
-              : "bg-surface text-text-primary hover:bg-surface-hover border border-border"
+              ? "bg-surface-hover text-secondary cursor-not-allowed"
+              : "bg-surface text-primary hover:bg-surface-hover border border-border"
           }`}
         >
           Previous
         </button>
-        <span className="text-sm text-text-secondary px-4 py-2">
+        <span className="text-sm text-secondary px-4 py-2">
           Page {pageNumber} of {totalPages}
         </span>
         <button
@@ -90,8 +90,8 @@ export const Pagination = ({
           disabled={pageNumber === totalPages}
           className={`px-4 py-2 text-sm font-medium rounded-lg ${
             pageNumber === totalPages
-              ? "bg-surface-hover text-text-secondary cursor-not-allowed"
-              : "bg-surface text-text-primary hover:bg-surface-hover border border-border"
+              ? "bg-surface-hover text-secondary cursor-not-allowed"
+              : "bg-surface text-primary hover:bg-surface-hover border border-border"
           }`}
         >
           Next
@@ -100,7 +100,7 @@ export const Pagination = ({
 
       {/* Desktop version */}
       <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-        <div className="text-sm text-text-secondary">
+        <div className="text-sm text-secondary">
           Page {pageNumber} of {totalPages}
         </div>
 
@@ -111,8 +111,8 @@ export const Pagination = ({
             disabled={pageNumber === 1}
             className={`p-2 rounded-lg border ${
               pageNumber === 1
-                ? "border-border text-text-secondary cursor-not-allowed"
-                : "border-border text-text-primary hover:bg-surface-hover hover:border-primary transition-colors"
+                ? "border-border text-secondary cursor-not-allowed"
+                : "border-border text-primary hover:bg-surface-hover hover:border-primary transition-colors"
             }`}
             aria-label="Previous page"
           >
@@ -124,7 +124,7 @@ export const Pagination = ({
             {pageNumbers.map((page, index) => (
               <React.Fragment key={index}>
                 {page === "..." ? (
-                  <span className="flex items-center justify-center w-10 h-10 text-text-secondary">
+                  <span className="flex items-center justify-center w-10 h-10 text-secondary">
                     ...
                   </span>
                 ) : (
@@ -133,7 +133,7 @@ export const Pagination = ({
                     className={`w-10 h-10 rounded-lg text-sm font-medium border transition-colors ${
                       pageNumber === page
                         ? "bg-primary border-primary text-primary-foreground"
-                        : "border-border text-text-primary hover:bg-surface-hover hover:border-primary"
+                        : "border-border text-primary hover:bg-surface-hover hover:border-primary"
                     }`}
                   >
                     {page}
@@ -149,8 +149,8 @@ export const Pagination = ({
             disabled={pageNumber === totalPages}
             className={`p-2 rounded-lg border ${
               pageNumber === totalPages
-                ? "border-border text-text-secondary cursor-not-allowed"
-                : "border-border text-text-primary hover:bg-surface-hover hover:border-primary transition-colors"
+                ? "border-border text-secondary cursor-not-allowed"
+                : "border-border text-primary hover:bg-surface-hover hover:border-primary transition-colors"
             }`}
             aria-label="Next page"
           >

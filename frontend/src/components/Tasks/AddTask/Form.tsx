@@ -101,12 +101,12 @@ export const TaskForm: React.FC<TaskFormProps> = ({
   return (
     <div className="bg-surface rounded-xl p-6">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6 pb-4 border-b border-border">
+      <div className="flex items-center justify-between mb-6 pb-4 border-b border-black">
         <div>
-          <h2 className="text-2xl font-bold text-text-primary">
+          <h2 className="text-2xl font-bold ">
             {isEditMode ? "Edit Task" : "Create New Task"}
           </h2>
-          <p className="text-text-secondary mt-1">
+          <p className="text-secondary mt-1">
             {isEditMode
               ? "Update your task details"
               : "Fill in the details to create a new task"}
@@ -117,22 +117,19 @@ export const TaskForm: React.FC<TaskFormProps> = ({
           className="p-2 rounded-lg hover:bg-surface-hover transition-colors"
           aria-label="Close"
         >
-          <X className="w-5 h-5 text-text-secondary" />
+          <X className="w-5 h-5 text-secondary" />
         </button>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Title Field */}
         <div className="space-y-2">
-          <label
-            htmlFor="title"
-            className="block text-sm font-medium text-text-primary"
-          >
+          <label htmlFor="title" className="block text-sm font-medium ">
             Task Title *
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <FileText className="w-5 h-5 text-text-secondary" />
+              <FileText className="w-5 h-5 text-secondary" />
             </div>
             <input
               id="title"
@@ -150,7 +147,7 @@ export const TaskForm: React.FC<TaskFormProps> = ({
             {errors.title && (
               <p className="text-sm text-status-danger">{errors.title}</p>
             )}
-            <p className="text-sm text-text-secondary ml-auto">
+            <p className="text-sm text-secondary ml-auto">
               {formData.title.length}/200
             </p>
           </div>
@@ -158,15 +155,12 @@ export const TaskForm: React.FC<TaskFormProps> = ({
 
         {/* Description Field */}
         <div className="space-y-2">
-          <label
-            htmlFor="description"
-            className="block text-sm font-medium text-text-primary"
-          >
+          <label htmlFor="description" className="block text-sm font-medium ">
             Description
           </label>
           <div className="relative">
             <div className="absolute top-3 left-3 pointer-events-none">
-              <FileText className="w-5 h-5 text-text-secondary" />
+              <FileText className="w-5 h-5 text-secondary" />
             </div>
             <textarea
               id="description"
@@ -184,7 +178,7 @@ export const TaskForm: React.FC<TaskFormProps> = ({
             {errors.description && (
               <p className="text-sm text-status-danger">{errors.description}</p>
             )}
-            <p className="text-sm text-text-secondary ml-auto">
+            <p className="text-sm text-secondary ml-auto">
               {formData.description.length}/500
             </p>
           </div>
@@ -194,15 +188,12 @@ export const TaskForm: React.FC<TaskFormProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Status Field */}
           <div className="space-y-2">
-            <label
-              htmlFor="status"
-              className="block text-sm font-medium text-text-primary"
-            >
+            <label htmlFor="status" className="block text-sm font-medium">
               Status
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Tag className="w-5 h-5 text-text-secondary" />
+                <Tag className="w-5 h-5 text-secondary" />
               </div>
               <select
                 id="status"
@@ -210,7 +201,7 @@ export const TaskForm: React.FC<TaskFormProps> = ({
                 value={formData.status}
                 onChange={handleChange}
                 disabled={isLoading}
-                className="block w-full pl-10 pr-3 py-3 bg-white/5 border border-border rounded-lg text-text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-50 appearance-none"
+                className="block w-full pl-10 pr-3 py-3 bg-white/5 border border-black rounded-lg text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-50 appearance-none"
               >
                 <option value="pending" className="bg-surface">
                   Pending
@@ -227,15 +218,12 @@ export const TaskForm: React.FC<TaskFormProps> = ({
 
           {/* Due Date Field */}
           <div className="space-y-2">
-            <label
-              htmlFor="due_date"
-              className="block text-sm font-medium text-text-primary"
-            >
+            <label htmlFor="due_date" className="block text-sm font-medium ">
               Due Date
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Calendar className="w-5 h-5 text-text-secondary" />
+                <Calendar className="w-5 h-5 text-secondary" />
               </div>
               <input
                 id="due_date"
@@ -244,19 +232,19 @@ export const TaskForm: React.FC<TaskFormProps> = ({
                 value={formData.due_date}
                 onChange={handleChange}
                 disabled={isLoading}
-                className="block w-full pl-10 pr-3 py-3 bg-white/5 border border-border rounded-lg text-text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-50"
+                className="block w-full pl-10 pr-3 py-3 bg-white/5 border border-black rounded-lg text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-50"
               />
             </div>
           </div>
         </div>
 
         {/* Form Actions */}
-        <div className="flex items-center justify-end space-x-4 pt-6 border-t border-border">
+        <div className="flex items-center justify-end space-x-4 pt-6 border-t border-black">
           <button
             type="button"
             onClick={onCancel}
             disabled={isLoading}
-            className="px-6 py-2.5 border border-border text-text-primary rounded-lg hover:bg-surface-hover transition-colors disabled:opacity-50"
+            className="px-6 py-2.5 border border-black text-primary rounded-lg hover:bg-surface-hover transition-colors disabled:opacity-50"
           >
             Cancel
           </button>

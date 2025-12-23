@@ -66,7 +66,7 @@ export const ViewTasks = () => {
       <div className="flex items-center justify-center h-64">
         <div className="text-center">
           <AlertCircle className="h-12 w-12 text-status-danger mx-auto mb-4" />
-          <p className="text-text-secondary">Failed to load tasks</p>
+          <p className="text-secondary">Failed to load tasks</p>
         </div>
       </div>
     );
@@ -78,14 +78,14 @@ export const ViewTasks = () => {
     <div className="p-6">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-text-primary">My Tasks</h1>
-          <p className="text-text-secondary mt-1">
+          <h1 className="text-2xl font-bold ">My Tasks</h1>
+          <p className="text-secondary mt-1">
             Manage and track your tasks efficiently
           </p>
         </div>
         <div className="flex gap-3">
           <button
-            onClick={() => console.log("Navigate to add task")}
+            onClick={() => navigate("/add-task")}
             className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
           >
             <Plus className="h-4 w-4" />
@@ -93,7 +93,7 @@ export const ViewTasks = () => {
           </button>
           <button
             onClick={handleBulkUpload}
-            className="flex items-center gap-2 px-4 py-2 bg-surface border border-border text-text-primary rounded-lg hover:bg-surface-hover transition-colors"
+            className="flex items-center gap-2 px-4 py-2 bg-surface border border-border text-primary text-bold rounded-lg hover:bg-surface-hover transition-colors"
           >
             <Upload className="h-4 w-4" />
             Bulk Upload
@@ -105,23 +105,23 @@ export const ViewTasks = () => {
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex-1 relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Search className="h-4 w-4 text-text-secondary" />
+              <Search className="h-4 w-4 text-secondary" />
             </div>
             <input
               type="text"
               placeholder="Search tasks..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 bg-background border border-border rounded-lg text-text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2 bg-background border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             />
           </div>
 
-          <div className="flex items-center gap-2">
-            <Filter className="h-4 w-4 text-text-secondary" />
+          <div className="relative flex items-center gap-2">
+            <Filter className="absolute h-4 w-4 text-secondary left-1" />
             <select
               value={status}
               onChange={(e) => setStatus(e.target.value)}
-              className="px-4 py-2 bg-background border border-border rounded-lg text-text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="px-4 py-2 bg-background text-center border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             >
               <option value="">All Status</option>
               <option value="pending">Pending</option>
@@ -136,20 +136,20 @@ export const ViewTasks = () => {
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-border bg-surface-hover">
-                <th className="text-left py-3 px-4 text-sm font-medium text-text-secondary">
+              <tr className="border-b border-black bg-surface-hover">
+                <th className="text-left py-3 px-4 text-sm font-medium text-secondary">
                   Title
                 </th>
-                <th className="text-left py-3 px-4 text-sm font-medium text-text-secondary">
+                <th className="text-left py-3 px-4 text-sm font-medium text-secondary">
                   Description
                 </th>
-                <th className="text-left py-3 px-4 text-sm font-medium text-text-secondary">
+                <th className="text-left py-3 px-4 text-sm font-medium text-secondary">
                   Status
                 </th>
-                <th className="text-left py-3 px-4 text-sm font-medium text-text-secondary">
+                <th className="text-left py-3 px-4 text-sm font-medium text-secondary">
                   Created
                 </th>
-                <th className="text-left py-3 px-4 text-sm font-medium text-text-secondary">
+                <th className="text-left py-3 px-4 text-sm font-medium text-secondary">
                   Actions
                 </th>
               </tr>
@@ -157,10 +157,7 @@ export const ViewTasks = () => {
             <tbody>
               {tasks?.length === 0 ? (
                 <tr>
-                  <td
-                    colSpan={5}
-                    className="py-8 text-center text-text-secondary"
-                  >
+                  <td colSpan={5} className="py-8 text-center text-secondary">
                     No tasks found. Create your first task!
                   </td>
                 </tr>
@@ -171,12 +168,10 @@ export const ViewTasks = () => {
                     className="border-b border-border hover:bg-surface-hover"
                   >
                     <td className="py-3 px-4">
-                      <div className="font-medium text-text-primary">
-                        {task.title}
-                      </div>
+                      <div className="font-medium">{task.title}</div>
                     </td>
                     <td className="py-3 px-4">
-                      <div className="text-text-secondary text-sm max-w-xs truncate">
+                      <div className="text-secondary text-sm max-w-xs truncate">
                         {task.description || "No description"}
                       </div>
                     </td>
@@ -193,14 +188,14 @@ export const ViewTasks = () => {
                         {task.status}
                       </span>
                     </td>
-                    <td className="py-3 px-4 text-sm text-text-secondary">
+                    <td className="py-3 px-4 text-sm text-secondary">
                       {new Date(task.created_at).toLocaleDateString()}
                     </td>
                     <td className="py-3 px-4">
                       <div className="flex gap-2">
                         <button
                           onClick={() => navigate(`/edit-task/${task.id}`)}
-                          className="p-2 text-text-secondary hover:text-primary hover:bg-primary/10 rounded transition-colors"
+                          className="p-2 text-secondary hover:text-primary hover:bg-primary/10 rounded transition-colors"
                         >
                           <Edit className="h-4 w-4" />
                         </button>
@@ -209,7 +204,7 @@ export const ViewTasks = () => {
                             setSelectedId(task.id);
                             deleteModal.open();
                           }}
-                          className="p-2 text-text-secondary hover:text-status-danger hover:bg-status-danger/10 rounded transition-colors"
+                          className="p-2 text-secondary hover:text-status-danger hover:bg-status-danger/10 rounded transition-colors"
                         >
                           <Trash2 className="h-4 w-4" />
                         </button>

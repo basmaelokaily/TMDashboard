@@ -32,17 +32,13 @@ export const CreateTaskPage = () => {
           <div className="flex items-center space-x-4">
             <Link
               to="/tasks"
-              className="flex items-center text-text-secondary hover:text-text-primary transition-colors"
+              className="flex items-center text-secondary hover:text-primary transition-colors"
             >
               <ArrowLeft className="w-5 h-5 mr-2" />
             </Link>
             <div>
-              <h1 className="text-2xl font-bold text-text-primary">
-                Create New Task
-              </h1>
-              <p className="text-text-secondary mt-1">
-                Add a new task to your list
-              </p>
+              <h1 className="text-2xl font-bold ">Create New Task</h1>
+              <p className="text-secondary mt-1">Add a new task to your list</p>
             </div>
           </div>
         </div>

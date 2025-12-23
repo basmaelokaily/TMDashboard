@@ -27,10 +27,8 @@ const StatCard: React.FC<StatCardProps> = ({
     <div className="bg-surface rounded-lg border border-border p-6 transition-all hover:shadow-md">
       <div className="flex justify-between items-start">
         <div>
-          <p className="text-sm font-medium text-text-secondary mb-1">
-            {title}
-          </p>
-          <p className="text-3xl font-bold text-text-primary">{value}</p>
+          <p className="text-sm font-medium text-secondary mb-1">{title}</p>
+          <p className="text-3xl font-bold text-primary">{value}</p>
           {trend && (
             <div className="flex items-center gap-1 mt-2">
               <TrendingUp className="h-4 w-4 text-status-completed" />

@@ -5,6 +5,6 @@ export const formInputStyle = ({
 }: {
   errors: Record<string, string>;
 }) =>
-  `block w-full pl-10 pr-3 py-3 bg-white/5 border ${
-    errors.title ? "border-status-danger" : "border-border"
-  } rounded-lg text-text-primary placeholder:text-text-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-50`;
+  `block w-full pl-10 pr-3 py-3 bg-white/5 text-black border ${
+    errors.title ? "border-status-danger" : "border-black"
+  } rounded-lg placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-50`;

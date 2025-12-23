@@ -1,5 +1,7 @@
+import { RegisterPage } from "../../components/register/RegistrationPage";
+
 export const Register = () => {
-  return <div>Register</div>;
+  return <RegisterPage />;
 };
 
 export function RegisterAndClearStorage() {

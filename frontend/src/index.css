@@ -41,11 +41,12 @@ body {
 body {
   background-color: var(--color-background);
   color: var(--color-text-primary);
-  colbg-background: #f8fafc #09090b;
+}
+
+/* colbg-background: #f8fafc #09090b;
   bg-primary: #dc2626 #ef4444;
   bg-surface: #ffffff #18181b;
-  text-text-primary: #0f172a #f4f4f5;
-  text-text-secondary: #64748b #a1a1aa;
+  text-primary: #0f172a #f4f4f5;
+  text-secondary: #64748b #a1a1aa;
   text-primary-foreground: #ffffff #ffffff;
-  border-border: #e2e8f0 #27272a;
-}
+  border-border: #e2e8f0 #27272a; */

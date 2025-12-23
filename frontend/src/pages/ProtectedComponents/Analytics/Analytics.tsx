@@ -1,3 +1,5 @@
+import { AnalyticsPage } from "../../../components/Analytics/Analytics";
+
 export const Analytics = () => {
-  return <div>Analytics</div>;
+  return <AnalyticsPage />;
 };
