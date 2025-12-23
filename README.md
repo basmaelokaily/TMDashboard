@@ -1,32 +1,11 @@
 Task Manager Web Application
 A fully functional Task Manager web application built with Django REST Framework backend and React frontend. This application supports user authentication, task management (CRUD operations), analytics & reporting, and features a modern responsive UI.
 
-📋 Table of Contents
-Features
-
-Tech Stack
-
-Project Structure
-
-Installation
-
-API Endpoints
-
-Frontend Components
-
-Environment Variables
-
-Running the Application
-
-Testing
-
-Deployment
-
 ✨ Features
 🔐 Authentication
 Login/Register with JWT token-based authentication
 
-Protected routes - unauthorized users redirected to login
+Protected routes - unauthorised users redirected to login
 
 Password validation and confirmation
 
