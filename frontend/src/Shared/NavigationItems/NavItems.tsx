@@ -44,13 +44,6 @@ export const navigationItems: NavItem[] = [
   },
   {
     id: 4,
-    label: "View Task",
-    href: "view-task",
-    component: <ViewTask />,
-    icon: <FileText className="w-5 h-5 text-white" />,
-  },
-  {
-    id: 5,
     label: "Analytics",
     href: "analytics",
     component: <Analytics />,
