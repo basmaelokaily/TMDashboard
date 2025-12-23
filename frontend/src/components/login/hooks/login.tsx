@@ -22,7 +22,7 @@ export const UseLoginHook = () => {
       localStorage.setItem(REFRESH_TOKEN, response.refresh);
       dispatch(
         setCredentials({
-          user: response.user, // From your custom JWT endpoint
+          user: response.user,
           token: response.access,
         })
       );

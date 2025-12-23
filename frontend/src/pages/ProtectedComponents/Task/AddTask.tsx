@@ -1,3 +1,5 @@
+import { CreateTaskPage } from "../../../components/Tasks/AddTask/AddTask";
+
 export const AddTask = () => {
-  return <div>AddTask</div>;
+  return <CreateTaskPage />;
 };

@@ -12,11 +12,15 @@ export const NotFound = () => {
       />
       <div className="absolute inset-0 bg-black/50" />
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 p-6 max-w-6xl mx-auto">
-        <div className="w-full md:w-1/2 flex justify-center">
+        <div className="w-full md:w-1/3 flex justify-center">
           <img
             src={notFound}
             alt="404 Error"
-            className="w-full max-w-md md:max-w-lg object-contain drop-shadow-2xl"
+            className="w-full animate-bounce transition-transform  max-w-md md:max-w-lg object-contain drop-shadow-2xl"
+            style={{
+              animation: "bounce 3s infinite ease-in-out",
+              animationDuration: "3s",
+            }}
           />
         </div>
         <div className="w-full md:w-1/2 text-center md:text-left">

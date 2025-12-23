@@ -1,15 +1,23 @@
-import { Suspense, useState } from "react";
+import { Suspense, useState, useEffect } from "react";
 import { navigationItems } from "../NavigationItems/NavItems";
 import { Loader } from "lucide-react";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 
 export const SideMenu = () => {
   const [currentSection, setCurrentSection] = useState("dashboard");
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const path = location.pathname.split("/").pop() || "dashboard";
+    setCurrentSection(path);
+  }, [location.pathname]);
+
   const handleNavigation = (href: string) => {
     setCurrentSection(href);
     navigate(href);
   };
+
   return (
     <div className="h-full">
       <aside className="w-60 bg-gray-900 shadow-xl border-r border-gray-800 rounded-xl h-full py-6">

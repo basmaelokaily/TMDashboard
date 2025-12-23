@@ -1,17 +1,8 @@
-// src/pages/ProtectedComponents/Dashboard/DashBoard.tsx
+import { useGetDashboardStatsQuery } from "../../Shared/redux/services/Dashboard";
 import { DashboardStatsCards } from "./StatCards";
 import { Loader, AlertCircle } from "lucide-react";
-
 export const Dashboard = () => {
-  // Dummy data for now - remove when API is ready
-  const stats = {
-    total_tasks: 42,
-    completed_tasks: 28,
-    pending_tasks: 14,
-  };
-
-  const isLoading = false; // Set to true when implementing loading
-  const error = null; // Set to error object when implementing error handling
+  const { data, isLoading, error } = useGetDashboardStatsQuery();
 
   if (isLoading) {
     return (
@@ -41,7 +32,7 @@ export const Dashboard = () => {
         <p className="text-gray-600">Welcome back! Here's your task summary</p>
       </div>
 
-      <DashboardStatsCards stats={stats} />
+      <DashboardStatsCards stats={data ? data : null} />
 
       {/* Additional dashboard content can go here */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

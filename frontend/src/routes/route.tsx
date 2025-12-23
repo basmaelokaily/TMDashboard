@@ -1,4 +1,3 @@
-// src/routes/index.ts (Route configuration ONLY)
 import { createBrowserRouter } from "react-router-dom";
 import { Login } from "../pages/login/Login";
 import { RegisterAndClearStorage } from "../pages/register/Register";
@@ -12,6 +11,7 @@ import { ViewTask } from "../pages/ProtectedComponents/Task/ViewTask";
 import { NotFound } from "../pages/NotFound/NotFound";
 import Logout from "../pages/logout/Logout";
 import { AuthLayout } from "../Shared/layout/Auth/AuthLayout";
+import { EditTask } from "../pages/ProtectedComponents/Task/EditTask";
 
 export const router = createBrowserRouter([
   {
@@ -54,6 +54,10 @@ export const router = createBrowserRouter([
       {
         path: "add-task",
         element: <AddTask />,
+      },
+      {
+        path: "edit-task/:id",
+        element: <EditTask />,
       },
       {
         path: "view-task",

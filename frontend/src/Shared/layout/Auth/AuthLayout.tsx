@@ -1,4 +1,3 @@
-// src/Shared/layout/Auth/AuthLayout.tsx
 import { Outlet } from "react-router-dom";
 import authbackground from "../../../assets/authbackground.png";
 import authimg from "../../../assets/bar-chart.png";
